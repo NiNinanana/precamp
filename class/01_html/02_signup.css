@@ -1,0 +1,13 @@
+input {
+    background-color: yellow;
+}
+
+.aaa {
+    background-color: skyblue;
+}
+
+#qqq {
+    background-color: green;
+}
+
+/* 우선순위 1. * / 2. tag / 3. class / 4. id */

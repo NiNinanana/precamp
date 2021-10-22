@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>인증번호 실습</title>
+    <script>
+        let isStarted = false
+
+        const aaa=()=>{ // 화살표함수
+            if(isStarted === false){
+                isStarted = true
+
+                const token = String(Math.floor(Math.random() * 1000000)).padStart(6, "0")
+                document.getElementById("qqq").innerText = token
+
+
+                let time = 179
+
+                setInterval(function(){
+                    if(time >= 0){
+                        const minutes = String(Math.floor(time/60)).padStart(2, "0")
+                        const seconds = String(time%60).padStart(2, "0")
+                        document.getElementById("ppp").innerText = minutes + ":" + seconds
+                        time = time-1
+                    }
+                }, 1000)
+            } else {
+                alert("이미 실행되었습니다.")
+            }
+        } 
+    </script>
+</head>
+<body>
+    <h1 id = "qqq">000000</h1>
+    <button onclick="aaa()">인증번호 전송</button>
+    <h1 id = "ppp">03:00</h1>
+    <button onclick="bbb()" disabled>인증완료</button>
+</body>
+</html>

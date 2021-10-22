@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>돔(DOM) 조작하기(HTML과 JAVASCRIPT 연결)</title>
+    <script>
+        function aaa(){
+            // alert("안녕하세요!!!!!!")
+
+            document.getElementById("qqq").innerText = "반갑습니다." //<div id="qqq">안녕하세요</div>
+        }
+
+        function asdf(){ // 순서대로 되는 것은 맞음. 그러나 완료할 때까지 기다려주지 않기 때문에 지연을 만들어 알림을 띄운다
+            const temp = Number(document.getElementById("count").innerText) + 1
+            document.getElementById("count").innerText = temp
+            setTimeout(() => {
+                alert("숫자 올리기")
+                
+            }, 200);
+        }
+
+        function changeColor(){
+            document.getElementById("ccc").setAttribute("style", "background-color: yellow")
+        }
+
+        function setDisabled(){
+            document.getElementById("ddd").setAttribute("disabled", "true")
+        }
+    </script>
+</head>
+<body>
+    <div id="qqq">안녕하세요</div>
+    <button onclick="aaa()">클릭하기!!</button>
+
+    <div id="count">0</div>
+    <button onclick="asdf()">숫자 올리기!!!</button>
+
+    <button id="ccc" onclick="changeColor()">색깔 바꾸기</button>
+    <button id="ddd" onclick="setDisabled()">비활성화 시키기</button>
+</body>
+</html>
